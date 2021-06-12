@@ -28,7 +28,6 @@
 
 import { Request, Response } from 'express';
 
-import {baseModel} from '../models/baseModel';
 import {requestHandlers} from './requestHandlers';
 
 export class BaseController
@@ -38,26 +37,5 @@ export class BaseController
 		res.render("index", {mobile: requestHandlers.isRequestFromMobile(req)});
 	}
 
-	public addBaseItem(req: Request, res: Response)
-	{
-		const newItem = new baseModel(req.body);
-		newItem.save((err, item) =>
-		{
-			if(err)
-				res.status(400).json({"error": err});
-			else
-				res.status(200).json({"message": "success", "item":item});
-		});
-	}
 
-	public getAllBaseItems(req: Request, res: Response)
-	{
-		baseModel.find({}, (err, items) =>
-		{
-			if(err)
-				res.status(500).json({"error": err});
-			else
-				res.status(200).json(items);
-		});
-	}
 }
