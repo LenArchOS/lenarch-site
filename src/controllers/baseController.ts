@@ -37,5 +37,13 @@ export class BaseController
 		res.render("index", {mobile: requestHandlers.isRequestFromMobile(req)});
 	}
 
+	public serveDownloadOS(req: Request, res: Response)
+	{
+		res.render("download", {mobile: requestHandlers.isRequestFromMobile(req)});
+	}
 
+	public servePackageInfo(req: Request, res: Response)
+	{
+		res.render("packages", {mobile: requestHandlers.isRequestFromMobile(req)});
+	}
 }

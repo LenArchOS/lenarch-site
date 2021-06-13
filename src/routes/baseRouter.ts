@@ -43,6 +43,10 @@ export class BaseRouter
 		// get the homepage
 		app.route('/').get(this.baseController.serveIndex);
 
+		// get the os download page
+		app.route('/download').get(this.baseController.serveDownloadOS);
 
+		// get the package info homepage
+		app.route('/packages').get(this.baseController.servePackageInfo);
 	}
 }
