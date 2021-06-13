@@ -1,3 +1,6 @@
 [submodule "materialize"]
 	path = materialize
 	url = https://github.com/Dogfalo/materialize.git
+[submodule "src/public/packages/x86_64"]
+	path = src/public/packages/x86_64
+	url = https://github.com/LenArchOS/lenarch-packages-x86_64.git
